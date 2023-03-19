@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/*Boilerplate*/
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  font-family: 'Libre Caslon Display';
+}
+
+body {
+  background-color: #F5F2E8;
+}
+
+/*************/
