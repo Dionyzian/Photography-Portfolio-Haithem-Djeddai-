@@ -18,3 +18,11 @@ body {
 }
 
 /*************/
+
+/*Miscellenous*/
+
+.shadow-1 {
+  box-shadow: 10px 10px 10px rgba(24, 94, 94, 0.45);
+}
+
+/*************/
