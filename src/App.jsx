@@ -4,6 +4,8 @@ import { ReactComponent as WavyLine } from './assets/wavy-line.svg'
 
 import img1 from './assets/img-1.jpg'
 import img2 from './assets/img-2.jpg'
+import img3 from './assets/img-3.jpg'
+import img4 from './assets/img-4.jpg'
 
 
 
@@ -37,7 +39,16 @@ function App() {
           </div>
         </div>
 
-        <img className='w-[80%] mx-auto' src={img2} alt="" />
+        <img className='w-[80%] mx-auto shadow-3' src={img2} alt="" />
+
+        <div className='flex justify-between mt-12'>
+          <div className='w-[48%]'>
+            <p className='text-[2.1rem] mb-[3.5rem] ml-10'>“A good photography is knowing where to stand.” <br /> - Ansel Adams</p>
+            <img className='h-[90%] shadow-2' src={img3} alt="" />
+          </div>
+
+          <img className='w-[48%] h-[90%] shadow-1' src={img4} alt="" />
+        </div>
 
       </main>
 
