@@ -10,44 +10,43 @@ import img4 from './assets/img-4.jpg'
 
 
 function App() {
-
   return (
     <div className="max-w-[1000px] mx-auto">
 
       <header className='flex justify-between items-center mt-1'>
-        <a href="#"><Logo className='' /></a>
+        <a href="#"><Logo className='w-[100px] h-[100px]' /></a>
 
         <nav>
           <ul className='flex gap-12'>
-            <li><a className='text-[1.7rem]' href="#">Gallery</a></li>
-            <li><a className='text-[1.7rem]' href="#">Contact Me</a></li>
+            <li><a className='text-[1.3rem] lg:text-[1.7rem]' href="#">Gallery</a></li>
+            <li><a className='text-[1.3rem] lg:text-[1.7rem]' href="#">Contact Me</a></li>
           </ul>
         </nav>
       </header>
 
       <main className=''>
-        <div className='flex justify-between'>
-          <div className='w-[55%]'>
-            <HaithemDjeddai className='w-[80%] h-[25%]' />
-            <h1 className='text-[5rem] ml-12' >Photography</h1>
-            <p className='text-[2.5rem]'>Capturing life's moments, <br /> one click at a time</p>
-            <WavyLine className='w-[70%] h-fit ml-auto mr-[8em]' />
+        <div className='flex flex-col md:flex-row md:justify-between'>
+          <div className='w-full md:w-[55%] mb-[3.5rem] md:mb-0 md:mr-8'>
+            <HaithemDjeddai className='mx-auto w-[85%] h-[23vw] lg:h-[22%] lg:mx-0' />
+            <h1 className='text-[2.4rem] ml-12 lg:text-[4.3rem]' >Photography</h1>
+            <p className='text-[1.5rem] ml-7 lg:ml-0 lg:text-[2.3rem] lg:leading-10 mt-3'>Capturing life's moments, <br /> one click at a time</p>
+            <WavyLine className='w-[70%] h-fit mx-auto lg:ml-auto md:mr-[8em]' />
           </div>
 
-          <div className='w-[45%]'>
-            <img className='h-[90%] w-[100%] shadow-1' src={img1} alt="" />
+          <div className='w-full md:w-[45%]'>
+            <img className='h-[90%] w-[90%] mx-auto lg:w-[100%] shadow-1' src={img1} alt="" />
           </div>
         </div>
 
-        <img className='w-[80%] mx-auto shadow-3' src={img2} alt="" />
+        <img className='w-[80%] mx-auto shadow-3 mt-12 md:mt-16' src={img2} alt="" />
 
-        <div className='flex justify-between mt-12'>
-          <div className='w-[48%]'>
-            <p className='text-[2.1rem] mb-[3.5rem] ml-10'>“A good photography is knowing where to stand.” <br /> - Ansel Adams</p>
-            <img className='h-[90%] shadow-2' src={img3} alt="" />
+        <div className='flex flex-col md:flex-row md:justify-between mt-12'>
+          <div className='w-full md:w-[48%]'>
+            <p className='text-[1.6rem] lg:text-[2.1rem] mb-[3.5rem] ml-10'>“A good photography is knowing where to stand.” <br /> - Ansel Adams</p>
+            <img className='h-[70%] w-[80%] mx-auto lg:w-full shadow-2' src={img3} alt="" />
           </div>
 
-          <img className='w-[48%] h-[90%] shadow-1' src={img4} alt="" />
+          <img className='w-[80%] mx-auto md:w-[48%] h-[90%] shadow-4 mt-12 md:mt-0' src={img4} alt="" />
         </div>
 
       </main>
