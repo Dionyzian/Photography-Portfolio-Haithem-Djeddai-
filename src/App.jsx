@@ -1,3 +1,5 @@
+import { useScroll } from 'framer-motion'
+
 import { ReactComponent as Logo } from './assets/logo.svg'
 import { ReactComponent as HaithemDjeddai } from './assets/haithem-djeddai.svg'
 import { ReactComponent as WavyLine } from './assets/wavy-line.svg'
@@ -10,6 +12,8 @@ import img4 from './assets/img-4.jpg'
 
 
 function App() {
+  const { scrollYProgress } = useScroll()
+
   return (
     <div className="max-w-[1000px] mx-auto">
 
@@ -27,18 +31,18 @@ function App() {
       <main className=''>
         <div className='flex flex-col md:flex-row md:justify-between'>
           <div className='w-full md:w-[55%] mb-[3.5rem] md:mb-0 md:mr-8'>
-            <HaithemDjeddai className='mx-auto w-[85%] h-[23vw] md:h-[15vw] lg:h-[22%] lg:mx-0' />
+            <HaithemDjeddai className='animate mx-auto w-[85%] h-[23vw] md:h-[15vw] lg:h-[22%] lg:mx-0' />
             <h1 className='text-[2.4rem] ml-12 md:text-[3rem] lg:text-[4.3rem]' >Photography</h1>
             <p className='text-[1.5rem] ml-7 lg:ml-0 md:text-[1.5rem] lg:text-[2.3rem] lg:leading-10 mt-3'>Capturing life's moments, <br /> one click at a time</p>
             <WavyLine className='w-[70%] h-fit mx-auto lg:ml-auto ' />
           </div>
 
           <div className='w-full md:w-[60%]'>
-            <img className='h-[90%] w-[90%] mx-auto lg:w-[100%] shadow-1' src={img1} alt="" />
+            <img className='h-[90%] w-[90%] mx-auto lg:h-[80%] lg:w-[100%] shadow-1' src={img1} alt="" />
           </div>
         </div>
 
-        <img className='w-[80%] mx-auto shadow-3 mt-12 md:mt-16' src={img2} alt="" />
+        <img className='w-[80%] mx-auto shadow-3 mt-12 md:mt-12' src={img2} alt="" />
 
         <div className='flex flex-col md:flex-row md:justify-between mt-12'>
           <div className='w-full md:w-[48%]'>
