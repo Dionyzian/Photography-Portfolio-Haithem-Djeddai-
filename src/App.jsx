@@ -17,7 +17,7 @@ function App() {
         <a href="#"><Logo className='w-[100px] h-[100px]' /></a>
 
         <nav>
-          <ul className='flex gap-12'>
+          <ul className='flex gap-5 mr-5 lg:mr-0 lg:gap-12'>
             <li><a className='text-[1.3rem] lg:text-[1.7rem]' href="#">Gallery</a></li>
             <li><a className='text-[1.3rem] lg:text-[1.7rem]' href="#">Contact Me</a></li>
           </ul>
@@ -27,13 +27,13 @@ function App() {
       <main className=''>
         <div className='flex flex-col md:flex-row md:justify-between'>
           <div className='w-full md:w-[55%] mb-[3.5rem] md:mb-0 md:mr-8'>
-            <HaithemDjeddai className='mx-auto w-[85%] h-[23vw] lg:h-[22%] lg:mx-0' />
-            <h1 className='text-[2.4rem] ml-12 lg:text-[4.3rem]' >Photography</h1>
-            <p className='text-[1.5rem] ml-7 lg:ml-0 lg:text-[2.3rem] lg:leading-10 mt-3'>Capturing life's moments, <br /> one click at a time</p>
-            <WavyLine className='w-[70%] h-fit mx-auto lg:ml-auto md:mr-[8em]' />
+            <HaithemDjeddai className='mx-auto w-[85%] h-[23vw] md:h-[15vw] lg:h-[22%] lg:mx-0' />
+            <h1 className='text-[2.4rem] ml-12 md:text-[3rem] lg:text-[4.3rem]' >Photography</h1>
+            <p className='text-[1.5rem] ml-7 lg:ml-0 md:text-[1.5rem] lg:text-[2.3rem] lg:leading-10 mt-3'>Capturing life's moments, <br /> one click at a time</p>
+            <WavyLine className='w-[70%] h-fit mx-auto lg:ml-auto ' />
           </div>
 
-          <div className='w-full md:w-[45%]'>
+          <div className='w-full md:w-[60%]'>
             <img className='h-[90%] w-[90%] mx-auto lg:w-[100%] shadow-1' src={img1} alt="" />
           </div>
         </div>
