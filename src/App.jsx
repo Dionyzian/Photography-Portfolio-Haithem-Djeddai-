@@ -1,4 +1,5 @@
-import { useScroll } from 'framer-motion'
+import { motion, useTransform, useScroll } from 'framer-motion'
+import { useRef, createRef, useEffect } from 'react'
 
 import { ReactComponent as Logo } from './assets/logo.svg'
 import { ReactComponent as HaithemDjeddai } from './assets/haithem-djeddai.svg'
@@ -15,7 +16,11 @@ import img7 from './assets/img-7.jpg'
 
 
 function App() {
-  const { scrollYProgress } = useScroll()
+  const ref = useRef(null)
+  const { scrollY } = useScroll({ target: ref, offset: ['start end', 'end start'] })
+  const rotate = useTransform(scrollY, [0, 1], [0, -8.40]);
+
+
 
   return (
     <div className="max-w-[1000px] mx-auto">
@@ -57,11 +62,13 @@ function App() {
         </div>
 
 
-        <div className="relative mx-auto max-w-[55vw] mt-12">
-          <img className='absolute w-[50vw] rotate-[-8.40deg] h-[65vh]' src={img5} alt="" />
-          <img className='absolute w-[50vw] rotate-[6.78deg] h-[65vh]' src={img6} alt="" />
-          <img className='absolute w-[50vw] rotate-[-2.33deg] h-[65vh]' src={img7} alt="" />
-        </div>
+        <motion.div ref={ref} style={{ rotate }} className="flex-col justify-between mx-auto min-h-[350vh] max-w-[48vw]">
+          <motion.img className='sticky top-[7rem] z-0 w-[50vw]  h-[65vh] mb-[6rem]' src={img5} alt="" />
+          <motion.img className='sticky top-[7rem] z-1 w-[50vw] rotate-[6.78deg] h-[65vh] mb-[6rem]' src={img6} alt="" />
+          <motion.img className='sticky top-[7rem] z-2 w-[50vw] rotate-[-2.33deg] h-[65vh] mb-[6rem]' src={img7} alt="" />
+        </motion.div>
+
+
 
       </main>
 
