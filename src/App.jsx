@@ -8,6 +8,9 @@ import img1 from './assets/img-1.jpg'
 import img2 from './assets/img-2.jpg'
 import img3 from './assets/img-3.jpg'
 import img4 from './assets/img-4.jpg'
+import img5 from './assets/img-5.jpg'
+import img6 from './assets/img-6.jpg'
+import img7 from './assets/img-7.jpg'
 
 
 
@@ -46,11 +49,18 @@ function App() {
 
         <div className='flex flex-col md:flex-row md:justify-between mt-12'>
           <div className='w-full md:w-[48%]'>
-            <p className='text-[1.6rem] lg:text-[2.1rem] mb-[3.5rem] ml-10'>“A good photography is knowing where to stand.” <br /> - Ansel Adams</p>
+            <p className='text-[1.6rem] lg:text-[2.1rem] mb-[3.5rem] ml-10 lg:leading-10'>“A good photography is knowing where to stand.” <br /> - Ansel Adams</p>
             <img className='h-[70%] w-[80%] mx-auto lg:w-full shadow-2' src={img3} alt="" />
           </div>
 
           <img className='w-[80%] mx-auto md:w-[48%] h-[90%] shadow-4 mt-12 md:mt-0' src={img4} alt="" />
+        </div>
+
+
+        <div className="relative mx-auto max-w-[55vw] mt-12">
+          <img className='absolute w-[50vw] rotate-[-8.40deg] h-[65vh]' src={img5} alt="" />
+          <img className='absolute w-[50vw] rotate-[6.78deg] h-[65vh]' src={img6} alt="" />
+          <img className='absolute w-[50vw] rotate-[-2.33deg] h-[65vh]' src={img7} alt="" />
         </div>
 
       </main>
