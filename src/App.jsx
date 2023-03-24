@@ -67,9 +67,9 @@ function App() {
           <p className='sticky top-[10rem] z-0 h-[65vh] mb-[6rem] text-[3rem]' >Capture <br /> the <br /> essence</p>
 
           <motion.div ref={ref} style={{ rotate }} className="flex-col justify-between  mx-auto min-h-[450vh] max-w-[48vw]">
-            <motion.img className='sticky top-[7rem] z-0 w-[45vw] shadow-3  h-[65vh] mb-[6rem]' src={img5} alt="" />
-            <motion.img className='sticky top-[7rem] z-1 w-[45vw] shadow-3 rotate-[6.78deg] h-[65vh] mb-[6rem]' src={img6} alt="" />
-            <motion.img className='sticky top-[7rem] z-2 w-[45vw] shadow-3 rotate-[-2.33deg] h-[65vh] mb-[6rem]' src={img7} alt="" />
+            <motion.img className='sticky top-[7rem] z-0 w-[45vw] shadow-3 rotate-[4deg] h-[58vh] mb-[6rem]' src={img5} alt="" />
+            <motion.img className='sticky top-[7rem] z-1 w-[45vw] shadow-3 rotate-[11deg] h-[58vh] mb-[6rem]' src={img6} alt="" />
+            <motion.img className='sticky top-[7rem] z-2 w-[45vw] shadow-3 rotate-[-2.5deg] h-[58vh] mb-[6rem]' src={img7} alt="" />
           </motion.div>
         </div>
 
