@@ -1,5 +1,7 @@
 import { motion, useTransform, useScroll } from 'framer-motion'
 import { useRef, createRef, useEffect } from 'react'
+import { useMedia } from 'react-use';
+
 
 import { ReactComponent as Logo } from './assets/logo.svg'
 import { ReactComponent as HaithemDjeddai } from './assets/haithem-djeddai.svg'
@@ -17,13 +19,31 @@ import img7 from './assets/img-7.jpg'
 
 function App() {
   const ref = useRef(null)
-  const { scrollY } = useScroll({ target: ref, offset: ['start end', 'end start'] })
-  const rotate = useTransform(scrollY, [0, 1], [0, -8.50]);
+  const { scrollY } = useScroll({
+    offset: ['end end', 'start end'],
+    target: ref
+  })
 
+  const rotationValues = [
+    0, // for small screens
+    -8.5, // for medium screens
+    -10, // for large screens
+  ];
+
+  const actualRotation = useMedia('(min-width: 1024px)') ? rotationValues[1] : useMedia('(min-width: 320px)') ? rotationValues[0] : rotationValues[2];
+
+  const rotate = useTransform(
+    scrollY,
+    [0, 1],
+    [0, actualRotation]
+  );
+
+  const opacity = useTransform(scrollY, [3000, 4000], [0, 1], { clamp: false });
+  const shadowBox = useTransform(scrollY, [3000, 5000], ['none', 'var(--box-shadow-3)'], { clamp: false })
 
 
   return (
-    <div className="max-w-[1000px] mx-auto">
+    <motion.div ref={ref} className="max-w-[1000px] mx-auto">
 
       <header className='flex justify-between items-center mt-1'>
         <a href="#"><Logo className='w-[100px] h-[100px]' /></a>
@@ -62,21 +82,21 @@ function App() {
         </div>
 
 
-        <div className='flex'>
-
-          <p className='sticky top-[10rem] z-0 h-[65vh] mb-[6rem] text-[3rem]' >Capture <br /> the <br /> essence</p>
-
-          <motion.div ref={ref} style={{ rotate }} className="flex-col justify-between  mx-auto min-h-[450vh] max-w-[48vw]">
-            <motion.img className='sticky top-[7rem] z-0 w-[45vw] shadow-3 rotate-[4deg] h-[58vh] mb-[6rem]' src={img5} alt="" />
-            <motion.img className='sticky top-[7rem] z-1 w-[45vw] shadow-3 rotate-[11deg] h-[58vh] mb-[6rem]' src={img6} alt="" />
-            <motion.img className='sticky top-[7rem] z-2 w-[45vw] shadow-3 rotate-[-2.5deg] h-[58vh] mb-[6rem]' src={img7} alt="" />
+        <motion.div className='flex flex-col md:flex-row'>
+          <motion.div style={{ opacity }}  >
+            <motion.p className='sticky md:top-[10rem] h-[40vh] lg:h-[65vh] mb-[6rem] text-[3rem]' >Capture <br /> the <br /> essence</motion.p>
           </motion.div>
-        </div>
+          <motion.div style={{ rotate }} className="flex-col justify-between mx-auto min-h-[250vh] lg:min-h-[450vh] w-full lg:max-w-[48vw]">
+            <motion.img style={{ boxShadow: shadowBox }} className='sticky mx-auto top-[8rem] lg:top-[7rem] z-0 w-[85%] lg:w-[45vw] rotate-[4deg] h-[40%] lg:h-[58vh] mb-[4rem] lg:mb-[6rem]' src={img5} alt="" />
+            <motion.img style={{ boxShadow: shadowBox }} className='sticky mx-auto top-[8rem] lg:top-[7rem] z-1 w-[85%] lg:w-[45vw] rotate-[11deg] h-[40%] lg:h-[58vh] mb-[4rem] lg:mb-[6rem]' src={img6} alt="" />
+            <motion.img style={{ boxShadow: shadowBox }} className='sticky mx-auto top-[8rem] lg:top-[7rem] z-2 w-[85%] lg:w-[45vw] rotate-[-2.5deg] h-[40%] lg:h-[58vh] mb-[4rem] lg:mb-[6rem]' src={img7} alt="" />
+          </motion.div>
+        </motion.div>
 
 
       </main>
 
-    </div>
+    </motion.div>
   )
 }
 
