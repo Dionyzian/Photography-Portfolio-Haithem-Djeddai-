@@ -84,12 +84,12 @@ function App() {
 
         <motion.div className='flex flex-col md:flex-row'>
           <motion.div style={{ opacity }}  >
-            <motion.p className='sticky md:top-[10rem] h-[40vh] lg:h-[65vh] mb-[6rem] text-[3rem]' >Capture <br /> the <br /> essence</motion.p>
+            <motion.p className='sticky hidden lg:block md:top-[10rem] h-[40vh] lg:h-[65vh] mb-[6rem] text-[3rem]' >Capture <br /> the <br /> essence</motion.p>
           </motion.div>
-          <motion.div style={{ rotate }} className="flex-col justify-between mx-auto min-h-[250vh] lg:min-h-[450vh] w-full lg:max-w-[48vw]">
-            <motion.img style={{ boxShadow: shadowBox }} className='sticky mx-auto top-[8rem] lg:top-[7rem] z-0 w-[85%] lg:w-[45vw] rotate-[4deg] h-[40%] lg:h-[58vh] mb-[4rem] lg:mb-[6rem]' src={img5} alt="" />
-            <motion.img style={{ boxShadow: shadowBox }} className='sticky mx-auto top-[8rem] lg:top-[7rem] z-1 w-[85%] lg:w-[45vw] rotate-[11deg] h-[40%] lg:h-[58vh] mb-[4rem] lg:mb-[6rem]' src={img6} alt="" />
-            <motion.img style={{ boxShadow: shadowBox }} className='sticky mx-auto top-[8rem] lg:top-[7rem] z-2 w-[85%] lg:w-[45vw] rotate-[-2.5deg] h-[40%] lg:h-[58vh] mb-[4rem] lg:mb-[6rem]' src={img7} alt="" />
+          <motion.div style={{ rotate }} className="flex-col mt-6 justify-between mx-auto min-h-[250vh] lg:min-h-[450vh] w-full lg:max-w-[48vw]">
+            <motion.img style={{ boxShadow: shadowBox }} className='sticky mx-auto top-[8rem] lg:top-[7rem] z-0 w-[85%] lg:w-[45vw] rotate-[4deg] h-[40%] md:h-[25%] lg:h-[58vh] mb-[4rem] lg:mb-[6rem]' src={img5} alt="" />
+            <motion.img style={{ boxShadow: shadowBox }} className='sticky mx-auto top-[8rem] lg:top-[7rem] z-1 w-[85%] lg:w-[45vw] rotate-[11deg] h-[40%] md:h-[25%] lg:h-[58vh] mb-[4rem] lg:mb-[6rem]' src={img6} alt="" />
+            <motion.img style={{ boxShadow: shadowBox }} className='sticky mx-auto top-[8rem] lg:top-[7rem] z-2 w-[85%] lg:w-[45vw] rotate-[-2.5deg] h-[40%] md:h-[25%] lg:h-[58vh] mb-[4rem] lg:mb-[6rem]' src={img7} alt="" />
           </motion.div>
         </motion.div>
 
