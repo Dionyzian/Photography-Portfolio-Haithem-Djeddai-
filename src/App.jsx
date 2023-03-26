@@ -1,4 +1,4 @@
-import { motion, useTransform, useScroll } from 'framer-motion'
+import { motion, useTransform, useScroll, useAnimation } from 'framer-motion'
 import { useRef, createRef, useEffect } from 'react'
 import { useMedia } from 'react-use';
 
@@ -6,6 +6,8 @@ import { useMedia } from 'react-use';
 import { ReactComponent as Logo } from './assets/logo.svg'
 import { ReactComponent as HaithemDjeddai } from './assets/haithem-djeddai.svg'
 import { ReactComponent as WavyLine } from './assets/wavy-line.svg'
+
+import PresentationText from './components/PresentationText';
 
 import img1 from './assets/img-1.jpg'
 import img2 from './assets/img-2.jpg'
@@ -94,13 +96,12 @@ function App() {
           </motion.div>
         </motion.div>
 
-        <div className='flex flex-col lg:flex-row gap-10 items-center'>
+        <motion.div className='flex flex-col lg:flex-row gap-10 items-center'>
           <img className='w-[55%] shadow-2' src={img8} alt="" />
 
-          <p className='text-[2.5rem]'>Experienced photographer with a keen eye for composition and a natural ability to capture the perfect moment</p>
-        </div>
+          <PresentationText />
 
-
+        </motion.div>
 
 
       </main>
