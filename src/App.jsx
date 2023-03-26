@@ -14,6 +14,7 @@ import img4 from './assets/img-4.jpg'
 import img5 from './assets/img-5.jpg'
 import img6 from './assets/img-6.jpg'
 import img7 from './assets/img-7.jpg'
+import img8 from './assets/img-8.jpeg'
 
 
 
@@ -92,6 +93,14 @@ function App() {
             <motion.img style={{ boxShadow: shadowBox }} className='sticky mx-auto top-[8rem] lg:top-[7rem] z-2 w-[85%] lg:w-[45vw] rotate-[-2.5deg] h-[40%] md:h-[25%] lg:h-[58vh] mb-[4rem] lg:mb-[6rem]' src={img7} alt="" />
           </motion.div>
         </motion.div>
+
+        <div className='flex flex-col lg:flex-row gap-10 items-center'>
+          <img className='w-[55%] shadow-2' src={img8} alt="" />
+
+          <p className='text-[2.5rem]'>Experienced photographer with a keen eye for composition and a natural ability to capture the perfect moment</p>
+        </div>
+
+
 
 
       </main>
