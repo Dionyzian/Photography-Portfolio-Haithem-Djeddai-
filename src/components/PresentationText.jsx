@@ -1,7 +1,7 @@
 import { useInView } from "react-intersection-observer";
 import { motion } from 'framer-motion'
 
-const TextComponent = () => {
+const PresentationText = () => {
     const { ref, inView } = useInView({
         threshold: 0.8 // adjust this value as needed
     });
@@ -16,16 +16,40 @@ const TextComponent = () => {
             y: 0,
             transition: {
                 duration: 1,
-                staggerChildren: 0.1, // add stagger effect
+                staggerChildren: 0.2, // add stagger effect
                 ease: 'easeInOut' // use custom easing function
             }
         }
     };
 
     const wordVariants = {
-        hidden: { opacity: 0, y: 20, rotate: 15 },
-        visible: { opacity: 1, y: 0, rotate: 0 }
+        hidden: { opacity: 0, y: "-100%" },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                type: "spring",
+                stiffness: 90,
+                damping: 20,
+                delayChildren: 0.8, // add delay for stagger effect
+                staggerChildren: 0.05 // add stagger effect
+            }
+        }
     };
+
+    const letterVariants = {
+        hidden: { opacity: 0.3, y: "-100%" },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                type: "spring",
+                stiffness: 50,
+                damping: 5,
+            }
+        }
+    };
+
 
     return (
         <motion.div
@@ -34,10 +58,17 @@ const TextComponent = () => {
             animate={inView ? "visible" : "hidden"}
             variants={textVariants}
         >
-            <motion.p className='text-[2.5rem]' variants={wordVariants}>Experienced</motion.p>
-            <motion.p className='text-[2.5rem]' variants={wordVariants}>photographer</motion.p>
-            <motion.p className='text-[2.5rem]' variants={wordVariants}>with a keen eye</motion.p>
-            <motion.p className='text-[2.5rem]' variants={wordVariants}>for composition</motion.p>
+            <motion.p className='text-[2.5rem]' variants={wordVariants}>Experienced photographer</motion.p>
+            <motion.p className='text-[2.5rem]' variants={wordVariants}>with a keen eye for</motion.p>
+
+            <motion.p className="text-[2.5rem] composition" variants={wordVariants}>
+                {"composition".split("").map((letter, index) => (
+                    <motion.span key={index} variants={letterVariants}>
+                        {letter}
+                    </motion.span>
+                ))}
+            </motion.p>
+
             <motion.p className='text-[2.5rem]' variants={wordVariants}>and a natural ability</motion.p>
             <motion.p className='text-[2.5rem]' variants={wordVariants}>to capture the perfect moment</motion.p>
         </motion.div>
