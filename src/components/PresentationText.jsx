@@ -15,7 +15,7 @@ const PresentationText = () => {
             opacity: 1,
             y: 0,
             transition: {
-                duration: 1,
+                duration: 1.5,
                 staggerChildren: 0.2, // add stagger effect
                 ease: 'easeInOut' // use custom easing function
             }
@@ -30,8 +30,8 @@ const PresentationText = () => {
             transition: {
                 type: "spring",
                 stiffness: 90,
-                damping: 20,
-                delayChildren: 0.8, // add delay for stagger effect
+                damping: 10,
+                delayChildren: 2, // add delay for stagger effect
                 staggerChildren: 0.05 // add stagger effect
             }
         }
